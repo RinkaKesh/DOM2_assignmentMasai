@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #cal{
+        /* background-color:whitesmoke; */
+        /* color:black; */
+        font-size: 12px;
+        font-weight: bolder;
+        
+    }
+    #reset{
+        /* background-color:whitesmoke; */
+        /* color:black; */
+        font-size: 12px;
+        
+    }
+    #cal:hover{
+        background-color: greenyellow;
+        }
+    #reset:hover{
+        background-color: pink; 
+    }
+    #display{
+      background-color: yellow;
+      color: black;
+      display: inline;
+      line-height:46px ;
+    }
+    h2{
+        color: blue;
+        background-color:pink;
+        display: inline;
+    }
+</style>
+<body>
+    <h2>BMI CALCULATOR</h2><br>
+    <h3 id="display"></h3>
+    <table>
+        <tr>
+            <td>WEIGHT</td>
+            <td><input id="weight" type="text" placeholder=" IN KGS"></td>
+        </tr>
+        <tr>
+            <td>HEIGHT</td>
+            <td><INPUT id="height" type="text" placeholder="IN METERS"></INPUT></td>
+        </tr>
+        <tr>
+            <td><Button onclick="check()" id="cal">CALCULATE</BUtton></td>
+            <td><Button onclick="empty()" id="reset">RESET</BUtton></td>
+        </tr>
+    </table>
+    
+</body>
+
+<script>
+    
+        
+    function check(){
+        let w=document.getElementById("weight").value;
+        let h=document.getElementById("height").value;
+        let d=document.getElementById("display");
+        let b1=document.getElementById("cal");
+         b1.style.backgroundColor="green";
+         let b2=document.getElementById("reset");
+         b2.style.backgroundColor="white"
+
+        let bmi=w/(h*h);
+        if(bmi<=18.4){
+            d.innerText= "BMI "+bmi+" Kg/m2"+"   (Under Weight)"}
+            
+        else if(bmi>=18.5 && bmi<=24.9){
+             d.innerText= "BMI "+bmi+" Kg/m2"+"   (Normal Weight)"}
+        else if(bmi>=25 && bmi<=29.9){
+            d.innerText= "BMI "+bmi+" Kg/m2"+"    (Over Weight)"}
+        
+        else {
+            d.innerText= "BMI "+bmi+" Kg/m2"+"     (Obese)"}
+        }
+
+    function empty(){
+        document.getElementById("weight").value=""
+        document.getElementById("height").value=""
+        let b2=document.getElementById("reset");
+         b2.style.backgroundColor="red";
+         let b1=document.getElementById("cal");
+         b1.style.backgroundColor="white";
+         let d=document.getElementById("display");
+         d.innerText="";
+    }
+
+
+
+</script>
+</html>
