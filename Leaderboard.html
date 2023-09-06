@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIN & MAX LEADERBOARD (DOM)</title>
+</head>
+  <style>
+    .data{
+        display: flex;
+        margin: auto;
+        width: 50%;
+        justify-content: space-between;
+    }
+    .data>div{
+        border: 1px solid;
+        padding: 30px;
+    }
+    .cont{
+        margin: auto;
+        width: 70%;
+        margin-top: 40px;
+    }
+    #score{
+        padding: 30px;
+        width: 20%;
+        margin: auto;
+        background-color: darkgrey;
+        text-align: center;
+        font-size: 24px;
+        font-weight:bolder;
+        color:black;
+        margin-bottom: 40px;
+    }
+    .keys{
+        display: grid;
+        grid-template-columns: repeat(3,40px);
+        gap: 10px;
+        justify-content: center;
+    }
+    #enter{
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    header{
+      font-size:24px ;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+<body>
+    <div class="data">
+       <div id="min" style="background-color: red; font-weight: bold;">43
+        <P style="text-align: center;">Min</P>
+        </div>
+       
+       <div id="max" style="background-color: green; font-weight: bold;">max</div>
+    </div>
+    <div class="cont">
+        <header >Score</header>
+        <div id="score"> #</div>
+        <div class="keys">
+            <div style="background-color: green;">1</div>
+            <div style="background-color: orangered;">2</div>
+            <div style="background-color: green;">3</div>
+            <div style="background-color: orangered">4</div>
+            <div style="background-color: green;">5</div>
+            <div style="background-color: orangered;">6</div>
+            <div style="background-color: green;">7</div>
+            <div style="background-color: orangered;">8</div>
+            <div style="background-color: green;">9</div>
+            <b></b>
+            <div style="background-color: blueviolet;">0</div>
+        </div>
+    </div>
+    <button id="enter">ENTER</button>
+</body>
+</html>
+<script>
+    let min = document.getElementById("min");
+    let max = document.getElementById("max");
+    let score = document.getElementById("score");
+    let keys = document.querySelectorAll(".keys > div");
+    let enter = document.getElementById("enter");
+    for(let i=0; i<keys.length; i++){
+        keys[i].addEventListener("click" , function(){
+            score.innerText += keys[i].innerText
+        })
+    }
+    enter.addEventListener("click", function(){
+        if(Number(score.innerText) < Number(min.innerText))
+        {
+             min.innerText = score.innerText;
+        }
+        if(Number(score.innerText) > Number(max.innerText)){
+           max.innerText = score.innerText
+        }
+        score.innerText= "";
+    })
+</script>

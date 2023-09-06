@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #row1{
+        display: grid;
+        grid-template-columns:50px 190px 200px 210px 50px
+    }
+    #row1 > div{
+        padding: 25%;
+    }
+    #row1 > div:nth-child(2){
+      background-color:red ;
+    }
+    #row1 > div:nth-child(3){
+      background-color:white ;
+    }
+    #row1 > div:nth-child(4){
+      background-color:green ;
+    }
+    #row2{
+        display: grid;
+        grid-template-columns:175px 350px 175px;
+    }
+    #row2>div{
+        padding:18%;
+    }
+    #row2>div:nth-child(1){
+        background-color:white ;
+    }
+    #row2>div:nth-child(2){
+        background-color:dimgray;
+    }
+    #row2>div:nth-child(3){
+        background-color:white ;
+    }
+    #space1{
+        padding:4%;
+    }
+    #cont{
+        display: grid;
+        grid-template-columns:117px 117px 117px;
+        grid-template-rows:repeat(4,8px);
+        gap:auto
+    }
+    #cont>div:nth-child(1){
+     background-color:green ;
+    }
+    #cont>div:nth-child(2){
+        background-color:orangered ;
+    }
+    #cont>div:nth-child(3){
+        background-color:green ;
+    }
+    #cont>div:nth-child(4){  
+        background-color:orangered ;
+    }
+    #cont>div:nth-child(5){
+        background-color:orangered ;
+    }
+    #cont>div:nth-child(6){
+        background-color:orangered ;
+    }
+    #cont>div:nth-child(7){
+        background-color:green;
+    }
+    #cont>div:nth-child(8){
+        background-color:orangered;
+    }
+    #cont>div:nth-child(9){
+        background-color:green ;
+    }
+    #cont>div:nth-child(10){
+        background-color:white ;
+    }
+    #cont>div:nth-child(11){
+        background-color:purple ;
+    }
+    #cont>div:nth-child(12){
+        background-color:white ;
+    }
+    #row{
+        display: grid;
+        grid-template-columns:175px 350px 175px;
+        grid-template-rows: ;
+    }
+
+
+</style>
+<body>
+    <div id="row1">
+           <div></div>
+           <div>43</div>
+           <div></div>
+           <div>2019</div>
+           <div></div>
+    </div>
+    <div id="space1"></div>
+    <div id="row2">
+        <div></div>
+        <div>#</div>
+        <div></div>
+    </div>
+    <div id="space2"></div>
+    <div id="row3">
+        <div></div>
+        <div id="cont">
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+        </div>
+    <div></div>
+</div>
+</body>
+</html>
